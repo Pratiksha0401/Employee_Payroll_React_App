@@ -6,7 +6,8 @@ import profile4 from '../../assets/profile-images/Ellipse -7.png';
 import './payroll-form.scss';
 import ToolBar from '../toolbar';
 import { useParams, Link, withRouter } from 'react-router';
-
+import EmployeeService from '../../services/employee-services';
+const employeeService = new EmployeeService();
 const PayrollForm = (props) => {
     let initialValue = {
         name: '',
@@ -101,6 +102,26 @@ const PayrollForm = (props) => {
 
     const save = async (event) => {
         event.preventDefault();
+        let object = {
+            name: formValue.name,
+            department: formValue.departmentValue,
+            gender: formValue.gender,
+            salary: formValue.salary,
+            startDate: `${formValue.day} ${formValue.month} ${formValue.year}`,
+            notes: formValue.id,
+            profileUrl: formValue.profileUrl
+        }
+        employeeService.addEmployee(object).then(data => {
+            console.log("data added");
+            }).catch(err => {
+                console.log("err while Add")
+            })
+
+    }
+
+    const reset = () => {
+        setForm({...initialValue, id: formValue.id, isUpdate: formValue.isUpdate});
+        console.log(formValue);
     }
 
     return (
@@ -243,7 +264,7 @@ const PayrollForm = (props) => {
 
                     <div className="row-content" style={{ marginTop: "20px" }}>
                         <label class="label text" htmlFor="notes">Notes</label>
-                        <textarea onChange={changeValue} id="notes" value={formValue.notes} name="Notes" class="input" placeholder="" style={{ height: "90px" }}>
+                        <textarea onChange={changeValue} id="notes" value={formValue.notes} name="Notes" className="input" placeholder="" style={{ height: "90px" }}>
                         </textarea>
                     </div>
 
@@ -254,13 +275,6 @@ const PayrollForm = (props) => {
                             <button className="button resertButton" type="reset">Reset</button>
                         </div>
                     </div>
-
-
-
-
-
-
-
 
                 </form>
             </div>
