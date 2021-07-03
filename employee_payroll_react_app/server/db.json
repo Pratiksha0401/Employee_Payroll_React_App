@@ -48,6 +48,70 @@
       "notes": "",
       "profileUrl": "../../assets/profile-images/Ellipse -3.png",
       "id": 1604589699567
+    },
+    {
+      "name": "Pratiksha Nagoshe",
+      "department": [
+        "Engineer"
+      ],
+      "gender": "female",
+      "salary": "300000",
+      "startDate": "1 Jan 2020",
+      "notes": "This is good for Pratiksha",
+      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
+      "id": 1604589699568
+    },
+    {
+      "name": "Pratiksha Nagoshe",
+      "department": [
+        "Engineer"
+      ],
+      "gender": "female",
+      "salary": "300000",
+      "startDate": "1 Jan 2020",
+      "notes": "This is good for Pratiksha",
+      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
+      "id": 1604589699569
+    },
+    {
+      "name": "Pratiksha",
+      "department": [
+        "Engineer"
+      ],
+      "gender": "female",
+      "salary": "7000",
+      "startDate": "1 Jan 2020",
+      "notes": "Good Pratiksha",
+      "profileUrl": "../../assets/profile-images/Ellipse -7.png",
+      "id": 1604589699570
+    },
+    {
+      "name": "Gon",
+      "department": [
+        "Sales"
+      ],
+      "gender": "male",
+      "salary": "6000",
+      "startDate": "1 Jan 2020",
+      "notes": "Gon",
+      "profileUrl": "../../assets/profile-images/Ellipse -3.png",
+      "id": 1604589699571
+    },
+    {
+      "name": "Pratik",
+      "department": [
+        "Engineer",
+        "Sales",
+        "HR",
+        "Finance",
+        "Others"
+      ],
+      "gender": "male",
+      "salary": "90000",
+      "startDate": "1 Jan 2020",
+      "notes": "All ",
+      "profileUrl": "../../assets/profile-images/Ellipse -8.png",
+      "id": 1604589699572
     }
   ]
 }

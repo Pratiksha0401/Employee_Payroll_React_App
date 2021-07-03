@@ -7,7 +7,9 @@ import './payroll-form.scss';
 import ToolBar from '../toolbar';
 import { useParams, Link, withRouter } from 'react-router';
 import EmployeeService from '../../services/employee-services';
+
 const employeeService = new EmployeeService();
+
 const PayrollForm = (props) => {
     let initialValue = {
         name: '',
@@ -102,17 +104,23 @@ const PayrollForm = (props) => {
 
     const save = async (event) => {
         event.preventDefault();
+        if (await validData()){
+            console.log('error', formValue);
+            return;
+        }
         let object = {
             name: formValue.name,
             department: formValue.departmentValue,
             gender: formValue.gender,
             salary: formValue.salary,
             startDate: `${formValue.day} ${formValue.month} ${formValue.year}`,
-            notes: formValue.id,
+            notes: formValue.notes,
             profileUrl: formValue.profileUrl
         }
         employeeService.addEmployee(object).then(data => {
-            console.log("data added");
+            alert("Data Added sucessfully");
+            reset();
+            console.log("Data added");
             }).catch(err => {
                 console.log("err while Add")
             })
@@ -120,7 +128,7 @@ const PayrollForm = (props) => {
     }
 
     const reset = () => {
-        setForm({...initialValue, id: formValue.id, isUpdate: formValue.isUpdate});
+        setForm({...initialValue});
         console.log(formValue);
     }
 
@@ -142,22 +150,22 @@ const PayrollForm = (props) => {
                         <label htmlFor="profileUrl" className="label text">Profile Image</label>
                         <div className="profile-radio-content">
                             <label>
-                                <input type="radio" id="profile1" name="profileUrl" checked={formValue.profileUrl == '../../assets/profile-images/Ellipse -3.png'}
+                                <input type="radio" id="profile1" name="profileUrl" checked={formValue.profileUrl === '../../assets/profile-images/Ellipse -3.png'}
                                     value="../../assets/profile-images/Ellipse -3.png" onChange={changeValue} />
                                 <img className="profile" id="img1" src={profile1} alt="profile1" />
                             </label>
                             <label>
-                                <input type="radio" id="profile2" name="profile" checked={formValue.profileUrl == '../../assets/profile-images/Ellipse 1.png'}
+                                <input type="radio" id="profile2" name="profileUrl" checked={formValue.profileUrl === '../../assets/profile-images/Ellipse 1.png'}
                                     value="../../assets/profile-images/Ellipse 1.png" onChange={changeValue} />
                                 <img className="profile" id="img2" src={profile2} alt="profile2" />
                             </label>
                             <label>
-                                <input type="radio" id="profile3" name="profile" checked={formValue.profileUrl == '../../assets/profile-images/Ellipse -8.png'}
+                                <input type="radio" id="profile3" name="profileUrl" checked={formValue.profileUrl === '../../assets/profile-images/Ellipse -8.png'}
                                     value="../../assets/profile-images/Ellipse -8.png" onChange={changeValue} />
                                 <img className="profile" id="img3" src={profile3} alt="profile3" />
                             </label>
                             <label>
-                                <input type="radio" id="profile4" name="profile" checked={formValue.profileUrl == '../../assets/profile-images/Ellipse -7.png'}
+                                <input type="radio" id="profile4" name="profileUrl" checked={formValue.profileUrl === '../../assets/profile-images/Ellipse -7.png'}
                                     value="../../assets/profile-images/Ellipse -7.png" onChange={changeValue} />
                                 <img className="profile" id="img4" src={profile4} alt="profile4" />
                             </label>
@@ -182,7 +190,7 @@ const PayrollForm = (props) => {
                             {formValue.allDepartments.map(item =>
                                 <span key={item}>
                                     <input className="checkbox" type="checkbox" onChange={() => onCheckChange(item)} name={item}
-                                        defaultChecked={() => getChecked(item)} value={item} />
+                                         value={item} />
                                     <label className="text" htmlFor={item}>{item}</label>
                                 </span>
                             )}
@@ -264,7 +272,7 @@ const PayrollForm = (props) => {
 
                     <div className="row-content" style={{ marginTop: "20px" }}>
                         <label class="label text" htmlFor="notes">Notes</label>
-                        <textarea onChange={changeValue} id="notes" value={formValue.notes} name="Notes" className="input" placeholder="" style={{ height: "90px" }}>
+                        <textarea onChange={changeValue} id="notes" value={formValue.notes} name="notes" className="input" placeholder="" style={{ height: "90px" }}>
                         </textarea>
                     </div>
 
@@ -272,7 +280,7 @@ const PayrollForm = (props) => {
                         <a routerLink="" class="resertButton button cancelButton">Cancle</a>
                         <div className="submit-reset">
                             <button className="button submitButton" type="submit" id="submitButton">{formValue.isUpdate ? 'Update': 'Submit'}</button>
-                            <button className="button resertButton" type="reset">Reset</button>
+                            <button className="button resertButton" onClick={reset} type="reset">Reset</button>
                         </div>
                     </div>
 
