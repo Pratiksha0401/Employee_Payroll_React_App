@@ -124,6 +124,18 @@
       "notes": "better",
       "profileUrl": "../../assets/profile-images/Ellipse 1.png",
       "id": 1604589699573
+    },
+    {
+      "name": "Lalu",
+      "department": [
+        "HR"
+      ],
+      "gender": "male",
+      "salary": "50000",
+      "startDate": "1 Jan 2020",
+      "notes": "lol.........",
+      "profileUrl": "../../assets/profile-images/Ellipse -3.png",
+      "id": 1604589699574
     }
   ]
 }

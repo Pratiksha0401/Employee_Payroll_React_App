@@ -123,9 +123,10 @@ const PayrollForm = (props) => {
             //props.history.push(data)
             alert("Data Added sucessfully");
             reset();
-            console.log("Data added");
+            //console.log("Data added");
             }).catch(err => {
-                console.log("err while Add")
+                alert("Error while adding");
+                //console.log("err while Add")
             })
 
     }
