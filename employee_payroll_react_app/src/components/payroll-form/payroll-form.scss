@@ -83,6 +83,7 @@
     .label {
         min-width: 140px;
         margin-right: 20px;
+        
     }
 
     .text {
@@ -90,7 +91,7 @@
         color: #42515f;
         opacity: 1;
         font-family: Roboto;
-
+        margin-right: 20px;
     }
 
     .input {
@@ -118,7 +119,7 @@
         flex-direction: row;
         align-items: center;
     }
-
+    
     select {
         padding: 10px;
         border: 1px solid #ccc;
@@ -128,6 +129,7 @@
         letter-spacing: 0px;
         color: #42515f;
         background: transparent;
+        margin-right: 10px;
     }
 
     .button-parent {
@@ -261,8 +263,8 @@
     }
 
 
-    error-output {
-        margin-left: 15px;
+    .error-output {
+        margin-left: 20px;
         font-size: 15px;
         font-style: italic;
         color: red;

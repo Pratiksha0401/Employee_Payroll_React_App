@@ -112,6 +112,18 @@
       "notes": "All ",
       "profileUrl": "../../assets/profile-images/Ellipse -8.png",
       "id": 1604589699572
+    },
+    {
+      "name": "Pratiksha",
+      "department": [
+        "Sales"
+      ],
+      "gender": "female",
+      "salary": "50000444",
+      "startDate": "1 Jan 2020",
+      "notes": "better",
+      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
+      "id": 1604589699573
     }
   ]
 }

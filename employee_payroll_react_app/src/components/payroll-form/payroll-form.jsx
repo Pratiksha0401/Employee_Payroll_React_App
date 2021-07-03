@@ -73,8 +73,10 @@ const PayrollForm = (props) => {
             startDate: ''
         }
 
-        //let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,3}$')
-        if (formValue.name.length < 1) {
+        let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z\\s]{2,}$')
+        if (nameRegex.test(formValue.name)) {
+            isError = false;
+        }else{
             error.name = 'Invalid Name'
             isError = true;
         }
@@ -85,17 +87,17 @@ const PayrollForm = (props) => {
         }
 
         if (formValue.salary.length < 1) {
-            error.salary = 'gender is required field'
+            error.salary = 'salary is required field'
             isError = true;
         }
 
         if (formValue.profileUrl.length < 1) {
-            error.profileUrl = 'gender is required field'
+            error.profileUrl = 'profileUrl is required field'
             isError = true;
         }
 
         if (formValue.departmentValue.length < 1) {
-            error.department = 'gender is required field'
+            error.department = 'department is required field'
             isError = true;
         }
         await setForm({ ...formValue, error: error })
@@ -118,6 +120,7 @@ const PayrollForm = (props) => {
             profileUrl: formValue.profileUrl
         }
         employeeService.addEmployee(object).then(data => {
+            //props.history.push(data)
             alert("Data Added sucessfully");
             reset();
             console.log("Data added");
@@ -142,9 +145,10 @@ const PayrollForm = (props) => {
                     </div>
                     <div className="row-content">
                         <label className="label text" htmlfor="name">Name</label>
-                        <input className="input" type="text" id="name" name="name" value={formValue.name} onChange={changeValue} placeholder="Your Name.." required />
+                        <input className="input" type="text" id="name" name="name" value={formValue.name} onChange={changeValue} placeholder="Your Name.." />
+                        <div className="error-output">{formValue.error.name}</div>
                     </div>
-                    <div className="error-output">{formValue.error.name}</div>
+                    
 
                     <div className="row-content" style={{ marginTop: "20px" }}>
                         <label htmlFor="profileUrl" className="label text">Profile Image</label>
@@ -170,8 +174,9 @@ const PayrollForm = (props) => {
                                 <img className="profile" id="img4" src={profile4} alt="profile4" />
                             </label>
                         </div>
+                        <div className="error-output">{formValue.error.profileUrl}</div>
                     </div>
-                    <div className="error-output">{formValue.error.profileUrl}</div>
+                    
 
                     <div className="row-content" style={{ marginTop: "25px" }}>
                         <label className="label text" for="gender">Gender</label>
@@ -181,8 +186,9 @@ const PayrollForm = (props) => {
                             <input type="radio" id="female" onChange={changeValue} value="female" name="gender" />
                             <label className="label text" htmlFor="female">Female</label>
                         </div>
+                        <div className="error-output">{formValue.error.gender}</div>
                     </div>
-                    <div className="error-output">{formValue.error.gender}</div>
+                    
 
                     <div className="row-content" style={{ marginTop: "30px" }}>
                         <label className="label text" for="department">Department</label>
@@ -195,14 +201,15 @@ const PayrollForm = (props) => {
                                 </span>
                             )}
                         </div>
-                    </div>
-                    <div className="error-output">{formValue.error.department}</div>
+                        <div className="error-output">{formValue.error.department}</div>
+                    </div>                   
 
                     <div className="row-content" style={{ marginTop: "20px" }}>
                         <label className="label text" htmlFor="salary">Salary</label>
                         <input className="input" type="number" onChange={changeValue} name="salary" id="salary" value={formValue.salary} />
+                        <div className="error-output">{formValue.error.salary}</div>        
                     </div>
-                    <div className="error-output">{formValue.error.salary}</div>
+                    
 
                     <div className="row-content">
                         <label className="label text" htmlFor="startDate">Start Date</label>
@@ -267,8 +274,9 @@ const PayrollForm = (props) => {
                                 <option value="2016">2016</option>
                             </select>
                         </div>
+                        <div className="error-output">{formValue.error.startDate}</div>
                     </div>
-                    <div className="error-output">{formValue.error.startDate}</div>
+                    
 
                     <div className="row-content" style={{ marginTop: "20px" }}>
                         <label class="label text" htmlFor="notes">Notes</label>
