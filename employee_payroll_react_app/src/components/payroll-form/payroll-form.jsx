@@ -254,13 +254,13 @@ const PayrollForm = () => {
                                 <option>Month</option>
                                 <option value="Jan">Jan</option>
                                 <option value="Feb">Feb</option>
-                                <option value="March">March</option>
-                                <option value="April">April</option>
+                                <option value="Mar">March</option>
+                                <option value="Apr">April</option>
                                 <option value="May">May</option>
                                 <option value="Jun">June</option>
-                                <option value="July">July</option>
+                                <option value="Jul">July</option>
                                 <option value="Aug">Aug</option>
-                                <option value="Sept">Sept</option>
+                                <option value="Sep">Sept</option>
                                 <option value="Oct">Oct</option>
                                 <option value="Nov">Nov</option>
                                 <option value="Dec">dec</option>

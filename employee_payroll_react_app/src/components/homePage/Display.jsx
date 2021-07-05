@@ -28,7 +28,7 @@ const Display = (props) => {
                 {
                     props.employeeArray && props.employeeArray.map((element, id) => (
                         <tr key={id}>
-                            <td>< img src={element.profileUrl} /></td>
+                            <td>< img src={profile1} /></td>
                             <td>{element.name}</td>
                             <td>{element.gender}</td>
                             <td>{element.department && element.department.map(dept => 
