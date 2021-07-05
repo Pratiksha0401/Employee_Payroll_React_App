@@ -1,6 +1,7 @@
+//import { axios } from "axios";
 const axios = require('axios').default;
 
-class AxiosService {
+export default class AxiosService {
     postService(url = '', payload=null, tokenRequired=false, httOptions = null){
         /* handles post operations 
             params : id : id of questions or comments to add/post
@@ -8,6 +9,12 @@ class AxiosService {
         */
        return axios.post(url, payload, tokenRequired && httOptions);
     }
+
+    getService(url = '', tokenRequired=false, httOptions = null){
+
+       return axios.get(url, tokenRequired && httOptions);
+    }
+
 }
 
-module.export = new AxiosService()
+module.export = new AxiosService();

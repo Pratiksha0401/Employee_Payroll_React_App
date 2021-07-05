@@ -1,55 +1,6 @@
 {
   "employee": [
     {
-      "name": "mohit kumar new",
-      "gender": "male",
-      "departMent": [
-        "HR"
-      ],
-      "salary": "30000",
-      "startDate": "1 Jan 2020",
-      "notes": "",
-      "id": 1604589551457,
-      "profileUrl": "../src/assets/profile-images/Ellipse 1.png"
-    },
-    {
-      "name": "mohit kumar test",
-      "gender": "male",
-      "departMent": [
-        "HR"
-      ],
-      "salary": "30000",
-      "startDate": "1 Jan 2020",
-      "notes": "",
-      "id": 1604589594363,
-      "profileUrl": "../src/assets/profile-images/Ellipse 1.png"
-    },
-    {
-      "name": "mohit",
-      "gender": "male",
-      "departMent": [
-        "HR"
-      ],
-      "salary": "30000",
-      "startDate": "1 Jan 2020",
-      "notes": "",
-      "id": 1604589699566,
-      "profileUrl": "../src/assets/profile-images/Ellipse -3.png"
-    },
-    {
-      "name": "Pratik",
-      "department": [
-        "Sales",
-        "Finance"
-      ],
-      "gender": "male",
-      "salary": "5000",
-      "startDate": "1 Jan 2020",
-      "notes": "",
-      "profileUrl": "../../assets/profile-images/Ellipse -3.png",
-      "id": 1604589699567
-    },
-    {
       "name": "Pratiksha Nagoshe",
       "department": [
         "Engineer"
@@ -136,6 +87,55 @@
       "notes": "lol.........",
       "profileUrl": "../../assets/profile-images/Ellipse -3.png",
       "id": 1604589699574
+    },
+    {
+      "name": "Gon",
+      "department": [
+        "HR"
+      ],
+      "gender": "male",
+      "salary": "444444",
+      "startDate": "1 Jan 2020",
+      "notes": "lol...........",
+      "profileUrl": "../../assets/profile-images/Ellipse -8.png",
+      "id": 1604589699575
+    },
+    {
+      "name": "Gon",
+      "department": [
+        "Sales"
+      ],
+      "gender": "male",
+      "salary": "44444",
+      "startDate": "1 Jan 2020",
+      "notes": "get",
+      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
+      "id": 1604589699576
+    },
+    {
+      "name": "Anii",
+      "department": [
+        "Sales"
+      ],
+      "gender": "female",
+      "salary": "1111",
+      "startDate": "1 Jan 2020",
+      "notes": "1asas",
+      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
+      "id": 1604589699577
+    },
+    {
+      "name": "Pratiksha",
+      "department": [
+        "Sales",
+        "HR"
+      ],
+      "gender": "female",
+      "salary": "22222",
+      "startDate": "1 Jan 2020",
+      "notes": "good",
+      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
+      "id": 1604589699578
     }
   ]
 }
