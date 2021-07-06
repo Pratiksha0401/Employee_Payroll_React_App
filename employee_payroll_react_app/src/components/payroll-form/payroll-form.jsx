@@ -7,8 +7,8 @@ import './payroll-form.scss';
 import ToolBar from '../toolbar';
 import { useParams, Link, withRouter } from 'react-router';
 import EmployeeService from '../../services/employee-services';
+import { useHistory } from 'react-router-dom';
 
-const employeeService = new EmployeeService();
 
 const PayrollForm = () => {
     let initialValue = {
@@ -100,10 +100,17 @@ const PayrollForm = () => {
             error.department = 'department is required field'
             isError = true;
         }
+
+        if (formValue.notes.length < 1) {
+            error.notes = 'notes is required field'
+            isError = true;
+        }
         await setForm({ ...formValue, error: error })
         return isError;
     }
 
+    const employeeService = new EmployeeService();
+    const history =useHistory();
     const save = async (event) => {
         event.preventDefault();
         if (await validData()){
@@ -119,15 +126,15 @@ const PayrollForm = () => {
             notes: formValue.notes,
             profileUrl: formValue.profileUrl
         }
+        
         employeeService.addEmployee(object).then(data => {
-            
             alert("Data Added sucessfully");
-            this.props.history.push("/");
+            history.push("/");
             reset();
             console.log("Data added");
             }).catch(err => {
                 alert("Error while adding");
-                //console.log("err while Add")
+                console.log("err while Add",err)
             })
 
     }
@@ -216,8 +223,8 @@ const PayrollForm = () => {
                     <div className="row-content">
                         <label className="label text" htmlFor="startDate">Start Date</label>
                         <div>
-                            <select onChange={changeValue} id="day" name="Day">
-                                <option>Day</option>
+                            <select onChange={changeValue} id="day" name="Day" value={formValue.day} required>
+                                <option value="">Day</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -250,8 +257,8 @@ const PayrollForm = () => {
                                 <option value="30">30</option>
                                 <option value="31">31</option>
                             </select>
-                            <select onChange={changeValue} id="month" name="Month">
-                                <option>Month</option>
+                            <select onChange={changeValue} id="month"  name="Month" required>
+                                <option value="">Month</option>
                                 <option value="Jan">Jan</option>
                                 <option value="Feb">Feb</option>
                                 <option value="Mar">March</option>
@@ -265,8 +272,8 @@ const PayrollForm = () => {
                                 <option value="Nov">Nov</option>
                                 <option value="Dec">dec</option>
                             </select>
-                            <select onChange={changeValue} id="year" name="Year">
-                                <option>Year</option>
+                            <select onChange={changeValue} id="year" name="Year" required>
+                                <option value="">Year</option>
                                 <option value="2022">2022</option>
                                 <option value="2021">2021</option>
                                 <option value="2020">2020</option>

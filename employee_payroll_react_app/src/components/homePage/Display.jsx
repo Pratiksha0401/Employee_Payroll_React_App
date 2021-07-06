@@ -7,11 +7,25 @@ import profile1 from '../../assets/profile-images/Ellipse -3.png';
 import profile2 from '../../assets/profile-images/Ellipse 1.png';
 import profile3 from '../../assets/profile-images/Ellipse -8.png';
 import profile4 from '../../assets/profile-images/Ellipse -7.png';
-
+import {deleteEmployee} from '../../services/axios-service';
+import EmployeeService from '../../services/employee-services';
 import { withRouter } from 'react-router-dom';
 import { element } from 'prop-types';
 
 const Display = (props) => {
+    const employeeService = new EmployeeService();
+    
+    const remove = (id) => {
+         employeeService.deleteEmployee(id).then(response =>{
+             alert("Employee deleted successfully",response.data);
+             props.history.push("/")
+         })
+         employeeService.getAllEmployees();
+         console.log("deleted");  
+    }
+
+    
+
     return (  
         <div className="table-main"> 
         <table id="display" className="table">
@@ -36,7 +50,7 @@ const Display = (props) => {
                             <td>{element.salary}</td>
                             <td>{element.startDate}</td>
                             <td>
-                                <img src={deleteIcon} alt="Delete" />
+                                <img src={deleteIcon} onClick={() => remove(element.id)} alt="Delete" />
                                 <img src={editIcon} alt="Edit" />
                             </td>    
                         </tr>

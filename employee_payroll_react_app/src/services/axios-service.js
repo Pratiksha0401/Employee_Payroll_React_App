@@ -13,7 +13,12 @@ export default  {
     getService(url = '', tokenRequired=false, httOptions = null){
 
        return axios.get(url, tokenRequired && httOptions);
-    }
+    },
+
+    deleteService(url = '',payload=null, tokenRequired=false, httOptions = null){
+
+        return axios.delete(url, payload, tokenRequired && httOptions);
+     }
 
 }
 

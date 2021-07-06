@@ -1,141 +1,40 @@
 {
   "employee": [
     {
-      "name": "Pratiksha Nagoshe",
-      "department": [
-        "Engineer"
-      ],
-      "gender": "female",
-      "salary": "300000",
-      "startDate": "1 Jan 2020",
-      "notes": "This is good for Pratiksha",
-      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
-      "id": 1604589699568
-    },
-    {
-      "name": "Pratiksha Nagoshe",
-      "department": [
-        "Engineer"
-      ],
-      "gender": "female",
-      "salary": "300000",
-      "startDate": "1 Jan 2020",
-      "notes": "This is good for Pratiksha",
-      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
-      "id": 1604589699569
-    },
-    {
       "name": "Pratiksha",
       "department": [
         "Engineer"
       ],
       "gender": "female",
-      "salary": "7000",
-      "startDate": "1 Jan 2020",
-      "notes": "Good Pratiksha",
-      "profileUrl": "../../assets/profile-images/Ellipse -7.png",
-      "id": 1604589699570
+      "salary": "777777",
+      "startDate": "  ",
+      "notes": "Good one",
+      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
+      "id": 1
     },
     {
-      "name": "Gon",
+      "name": "Sals",
       "department": [
-        "Sales"
+        "HR"
       ],
       "gender": "male",
-      "salary": "6000",
+      "salary": "2222222",
       "startDate": "1 Jan 2020",
-      "notes": "Gon",
+      "notes": "aaaaaaaaaaa",
       "profileUrl": "../../assets/profile-images/Ellipse -3.png",
-      "id": 1604589699571
+      "id": 3
     },
     {
-      "name": "Pratik",
-      "department": [
-        "Engineer",
-        "Sales",
-        "HR",
-        "Finance",
-        "Others"
-      ],
-      "gender": "male",
-      "salary": "90000",
-      "startDate": "1 Jan 2020",
-      "notes": "All ",
-      "profileUrl": "../../assets/profile-images/Ellipse -8.png",
-      "id": 1604589699572
-    },
-    {
-      "name": "Pratiksha",
+      "name": "Hello",
       "department": [
         "Sales"
       ],
       "gender": "female",
-      "salary": "50000444",
+      "salary": "123123",
       "startDate": "1 Jan 2020",
-      "notes": "better",
+      "notes": "444444",
       "profileUrl": "../../assets/profile-images/Ellipse 1.png",
-      "id": 1604589699573
-    },
-    {
-      "name": "Lalu",
-      "department": [
-        "HR"
-      ],
-      "gender": "male",
-      "salary": "50000",
-      "startDate": "1 Jan 2020",
-      "notes": "lol.........",
-      "profileUrl": "../../assets/profile-images/Ellipse -3.png",
-      "id": 1604589699574
-    },
-    {
-      "name": "Gon",
-      "department": [
-        "HR"
-      ],
-      "gender": "male",
-      "salary": "444444",
-      "startDate": "1 Jan 2020",
-      "notes": "lol...........",
-      "profileUrl": "../../assets/profile-images/Ellipse -8.png",
-      "id": 1604589699575
-    },
-    {
-      "name": "Gon",
-      "department": [
-        "Sales"
-      ],
-      "gender": "male",
-      "salary": "44444",
-      "startDate": "1 Jan 2020",
-      "notes": "get",
-      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
-      "id": 1604589699576
-    },
-    {
-      "name": "Anii",
-      "department": [
-        "Sales"
-      ],
-      "gender": "female",
-      "salary": "1111",
-      "startDate": "1 Jan 2020",
-      "notes": "1asas",
-      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
-      "id": 1604589699577
-    },
-    {
-      "name": "Pratiksha",
-      "department": [
-        "Sales",
-        "HR"
-      ],
-      "gender": "female",
-      "salary": "22222",
-      "startDate": "1 Jan 2020",
-      "notes": "good",
-      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
-      "id": 1604589699578
+      "id": 4
     }
   ]
 }
