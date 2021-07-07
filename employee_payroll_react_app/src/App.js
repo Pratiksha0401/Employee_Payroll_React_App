@@ -1,7 +1,8 @@
 import './App.css';
 import PayrollForm from './components/payroll-form/payroll-form'
 import {BrowserRouter as Router , Switch, Route} from "react-router-dom";
-import HomePage from './components/homePage/homePage.jsx' 
+import HomePage from './components/homePage/homePage' 
+import Display from './components/homePage/Display';
 
 function App() {
   return (
@@ -11,9 +12,8 @@ function App() {
         <Route exact path="/" component={HomePage}>
           {/* <HomePage /> */}
         </Route>
-        <Route exact path="/payroll-form" component={PayrollForm}>
-       {/* <PayrollForm /> */}
-        </Route>
+        <Route exact path="/payroll-form" component={PayrollForm} />
+        <Route exact path="/payroll-form/:id" component={PayrollForm} />
       </Switch>
     </Router>
   </div>

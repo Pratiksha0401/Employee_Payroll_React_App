@@ -1,40 +1,41 @@
 {
-  "employee": [
+  "payrollservice": [
     {
-      "name": "Pratiksha",
+      "name": "Prati",
       "department": [
         "Engineer"
       ],
-      "gender": "female",
-      "salary": "777777",
-      "startDate": "  ",
-      "notes": "Good one",
-      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
-      "id": 1
-    },
-    {
-      "name": "Sals",
-      "department": [
-        "HR"
-      ],
       "gender": "male",
-      "salary": "2222222",
+      "salary": "545345",
       "startDate": "1 Jan 2020",
-      "notes": "aaaaaaaaaaa",
+      "notes": "Alll goood",
       "profileUrl": "../../assets/profile-images/Ellipse -3.png",
-      "id": 3
+      "id": 10
     },
     {
-      "name": "Hello",
+      "name": "Megha",
+      "department": [
+        "Sales",
+        "Finance"
+      ],
+      "gender": "female",
+      "salary": "1110",
+      "startDate": "1 Jan 2020",
+      "notes": "Alll goood with megha",
+      "profileUrl": "../../assets/profile-images/Ellipse 1.png",
+      "id": 12
+    },
+    {
+      "name": "Pratiksha",
       "department": [
         "Sales"
       ],
       "gender": "female",
-      "salary": "123123",
+      "salary": "88888888888",
       "startDate": "1 Jan 2020",
-      "notes": "444444",
+      "notes": "Alll goood hello 888888888",
       "profileUrl": "../../assets/profile-images/Ellipse 1.png",
-      "id": 4
+      "id": 14
     }
   ]
 }

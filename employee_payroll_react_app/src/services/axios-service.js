@@ -18,6 +18,16 @@ export default  {
     deleteService(url = '',payload=null, tokenRequired=false, httOptions = null){
 
         return axios.delete(url, payload, tokenRequired && httOptions);
+     },
+
+     updateService(url = '',payload=null, tokenRequired=false, httOptions = null){
+
+        return axios.put(url, payload, tokenRequired && httOptions);
+     },
+
+     getByIdService(url = '',payload=null, tokenRequired=false, httOptions = null){
+
+        return axios.get(url, payload, tokenRequired && httOptions);
      }
 
 }

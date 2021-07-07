@@ -24,12 +24,13 @@ class HomePage extends React.Component {
     employeeService = new EmployeeService();
     getAllEmployee = () => {
         this.employeeService.getAllEmployees().then(data => {
-            console.log("data after get", data.data);
+            console.log("data after get", data);
             this.setState({ employeeArray: data.data })
         }).catch(err => {
             console.log("err after", err);
         })
     }
+
 
     render() {
         return (
@@ -38,7 +39,7 @@ class HomePage extends React.Component {
                 <div className="header-content">
                     <div class="header-content sub-main-content">
                         <div class="emp-detail-text">
-                            Employee Details <div class="emp-count">0</div>
+                            Employee Details <div class="emp-count">{this.state.employeeArray.length}</div>
                         </div>
                         <div className="row button-box">
                         <div className="search-box">
@@ -47,7 +48,7 @@ class HomePage extends React.Component {
                             <img className="search-icon" src={Searchicon} alt="sercah-icon" />    
                         </div>
                         <Link  to="payroll-form" className="add-button">
-                            <div class="plus-icon">
+                            <div className="plus-icon">
                                 <img src={AddIcon} alt="Add User Logo" />
                             </div>
                             <div>Add User</div>

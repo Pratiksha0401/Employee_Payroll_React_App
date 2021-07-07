@@ -86,7 +86,7 @@ const PayrollForm = () => {
             isError = true;
         }
 
-        if (formValue.salary.length < 1) {
+        if (formValue.salary==='') {
             error.salary = 'salary is required field'
             isError = true;
         }
@@ -101,17 +101,64 @@ const PayrollForm = () => {
             isError = true;
         }
 
-        if (formValue.notes.length < 1) {
+        if (formValue.notes === '') {
             error.notes = 'notes is required field'
             isError = true;
         }
         await setForm({ ...formValue, error: error })
         return isError;
     }
-
     const employeeService = new EmployeeService();
+
+    const params= useParams();
+    console.log(params.id)
+
+    useEffect(() => {
+
+        if(params.id){
+        getEmployeeById(params.id);
+       // setForm({...formValue, isUpdate: true});
+
+        }
+        console.log(params.id)
+    }, []);
+
+    const getEmployeeById = (id) => {
+        console.log(id)
+        employeeService.getEmployeeById(id).then( responseData => {
+            let object = {
+                id: responseData.data.id,
+                name: responseData.data.name,
+                department: responseData.data.department,
+                gender: responseData.data.gender,
+                salary: responseData.data.salary,
+                day: responseData.data.startDate.split(" ")[0],
+                month: responseData.data.startDate.split(" ")[1],
+                year: responseData.data.startDate.split(" ")[2],
+                notes: responseData.data.notes,
+                profileUrl: responseData.data.profileUrl
+            }
+            setForm({ ...formValue,
+                 name: responseData.data.name,
+                 department: responseData.data.department,
+                 gender: responseData.data.gender,
+                 salary: responseData.data.salary,
+                 day: responseData.data.startDate.split(" ")[0],
+                 month: responseData.data.startDate.split(" ")[1],
+                 year: responseData.data.startDate.split(" ")[2],
+                 notes: responseData.data.notes,
+                 profileUrl: responseData.data.profileUrl,
+                 isUpdate: true
+                })
+            console.log(responseData.data);
+        })
+    }
+
+    
     const history =useHistory();
-    const save = async (event) => {
+
+    const save = async (event) => { 
+      
         event.preventDefault();
         if (await validData()){
             console.log('error', formValue);
@@ -126,17 +173,31 @@ const PayrollForm = () => {
             notes: formValue.notes,
             profileUrl: formValue.profileUrl
         }
-        
-        employeeService.addEmployee(object).then(data => {
-            alert("Data Added sucessfully");
-            history.push("/");
-            reset();
-            console.log("Data added");
+        console.log(formValue.isUpdate);
+
+        if(formValue.isUpdate){
+            console.log(params.id);
+            employeeService.updateEmployee(params.id,object).then(data =>{
+                alert("Data Updated successfully",data.data);
+                history.push("/");
+                reset();
+                console.log("updated", data.data)
             }).catch(err => {
                 alert("Error while adding");
                 console.log("err while Add",err)
             })
 
+        }else{
+        employeeService.addEmployee(object).then(data => {
+            alert("Data Added sucessfully");
+            history.push("/");
+            reset();
+            console.log("Data added", data.data);
+            }).catch(err => {
+                alert("Error while adding");
+                console.log("err while Add",err)
+            })
+        }
     }
 
     const reset = () => {
@@ -223,7 +284,7 @@ const PayrollForm = () => {
                     <div className="row-content">
                         <label className="label text" htmlFor="startDate">Start Date</label>
                         <div>
-                            <select onChange={changeValue} id="day" name="Day" value={formValue.day} required>
+                            <select onChange={changeValue} id="day" name="Day" required>
                                 <option value="">Day</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -294,7 +355,7 @@ const PayrollForm = () => {
                     </div>
 
                     <div className="button-parent">
-                        <a routerLink="" class="resertButton button cancelButton">Cancle</a>
+                        <a routerLink="/" class="resertButton button cancelButton">Cancle</a>
                         <div className="submit-reset">
                             <button className="button submitButton" type="submit" id="submitButton">{formValue.isUpdate ? 'Update': 'Submit'}</button>
                             <button className="button resertButton" onClick={reset} type="reset">Reset</button>
