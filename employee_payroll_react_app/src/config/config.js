@@ -1,3 +1,3 @@
 module.exports = {
-    baseUrl: 'http://localhost:3000/payrollservice/'
+    baseUrl: 'http://localhost:8080/payrollservice/'
 }

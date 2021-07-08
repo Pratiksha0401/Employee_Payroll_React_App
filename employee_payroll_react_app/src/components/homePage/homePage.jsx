@@ -24,8 +24,10 @@ class HomePage extends React.Component {
     employeeService = new EmployeeService();
     getAllEmployee = () => {
         this.employeeService.getAllEmployees().then(data => {
-            console.log("data after get", data);
-            this.setState({ employeeArray: data.data })
+
+            console.log("data after get", data.data.data);
+            
+            this.setState({ employeeArray: data.data.data })
         }).catch(err => {
             console.log("err after", err);
         })

@@ -15,6 +15,7 @@ import { useHistory } from 'react-router-dom';
 
 
 const Display = (props) => {
+    console.log(props)
     const employeeService = new EmployeeService();
     const history = useHistory();
 
@@ -25,11 +26,7 @@ const Display = (props) => {
         }).catch(err => {
             alert("Error while deleting data");
         })
-        //employeeService.getAllEmployees();
-        console.log("deleted");
     }
-
-
 
     const update = (id) => {
         props.history.push(`/payroll-form/${id}`)
@@ -54,18 +51,18 @@ const Display = (props) => {
                         <th>Actions</th>
                     </tr>
                     {
-                        props.employeeArray && props.employeeArray.map((element, id) => (
-                            <tr key={id}>
-                                <td>< img src={profile1} /></td>
+                        props.employeeArray && props.employeeArray.map((element) => (
+                            <tr key={element.employeeId}>
+                                <td>< img src={element.profilePic} /></td>
                                 <td>{element.name}</td>
                                 <td>{element.gender}</td>
-                                <td>{element.department && element.department.map(dept =>
+                                <td>{element.departments && element.departments.map(dept =>
                                     (<div className='dept-label'>{dept}</div>))}</td>
                                 <td>{element.salary}</td>
                                 <td>{element.startDate}</td>
                                 <td>
-                                    <img src={deleteIcon} onClick={() => remove(element.id)} alt="Delete" />
-                                    <img src={editIcon} onClick={() => update(element.id)} alt="Edit" />
+                                    <img src={deleteIcon} onClick={() => remove(element.employeeId)} alt="Delete" />
+                                    <img src={editIcon} onClick={() => update(element.employeeId)} alt="Edit" />
                                 </td>
                             </tr>
                         ))
