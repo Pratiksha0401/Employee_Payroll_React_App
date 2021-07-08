@@ -289,7 +289,7 @@ const PayrollForm = () => {
                     <div className="row-content">
                         <label className="label text" htmlFor="startDate">Start Date</label>
                         <div>
-                            <select onChange={changeValue} id="day" name="Day" required>
+                            <select onChange={changeValue} id="day" name="day" value={formValue.day} required>
                                 <option value="">Day</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -323,7 +323,7 @@ const PayrollForm = () => {
                                 <option value="30">30</option>
                                 <option value="31">31</option>
                             </select>
-                            <select onChange={changeValue} id="month"  name="Month" required>
+                            <select onChange={changeValue} id="month"  name="month" value={formValue.month} required>
                                 <option value="">Month</option>
                                 <option value="Jan">Jan</option>
                                 <option value="Feb">Feb</option>
@@ -338,7 +338,7 @@ const PayrollForm = () => {
                                 <option value="Nov">Nov</option>
                                 <option value="Dec">dec</option>
                             </select>
-                            <select onChange={changeValue} id="year" name="Year" required>
+                            <select onChange={changeValue} id="year" name="year" value={formValue.year} required>
                                 <option value="">Year</option>
                                 <option value="2022">2022</option>
                                 <option value="2021">2021</option>
