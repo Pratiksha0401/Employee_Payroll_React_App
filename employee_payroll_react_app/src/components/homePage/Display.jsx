@@ -13,7 +13,12 @@ import { withRouter, Link } from 'react-router-dom';
 import { element } from 'prop-types';
 import { useHistory } from 'react-router-dom';
 
-
+const profileDictionary = {
+    "../../assets/profile-images/Ellipse -3.png": profile1,
+    "../../assets/profile-images/Ellipse 1.png": profile2,
+    "../../assets/profile-images/Ellipse -8": profile3,
+    "../../assets/profile-images/Ellipse -7": profile4 
+}
 const Display = (props) => {
     console.log(props)
     const employeeService = new EmployeeService();
@@ -53,7 +58,7 @@ const Display = (props) => {
                     {
                         props.employeeArray && props.employeeArray.map((element) => (
                             <tr key={element.employeeId}>
-                                <td>< img src={element.profilePic} /></td>
+                                <td>< img src={profileDictionary[element.profilePic]} /></td>
                                 <td>{element.name}</td>
                                 <td>{element.gender}</td>
                                 <td>{element.departments && element.departments.map(dept =>
