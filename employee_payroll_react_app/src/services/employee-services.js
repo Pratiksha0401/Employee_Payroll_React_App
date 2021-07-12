@@ -27,4 +27,8 @@ export default class EmployeeService {
     getEmployeeById(id){
         return AxiosService.getService(`${this.baseUrl}get/${id}`);
     }
+
+    getEmployeeByNameKeyword(nameKeyword){
+        return AxiosService.getService(`${this.baseUrl}getByNameKeyword/${nameKeyword}`);
+    }
 }

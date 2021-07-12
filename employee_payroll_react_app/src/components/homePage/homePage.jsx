@@ -15,9 +15,12 @@ class HomePage extends React.Component {
         super()
         this.state = {
             employeeArray: [],
-            searchExanpand:''
+            nameKeyword: '',
+            searchExanpand:'',
+            result: []
         }
         this.getAllEmployee();
+        this.search(this.state.nameKeyword);
     }
 
     
@@ -33,6 +36,18 @@ class HomePage extends React.Component {
         })
     }
 
+    search = (nameKeyword) => {
+        
+        this.employeeService.getEmployeeByNameKeyword(nameKeyword).then(data =>{
+            console.log("search", data.data.data)
+            this.setState({employeeArray: data.data.data})
+        }).catch(err =>{
+            console.log("Error while searching", err);
+        })
+
+        console.log(nameKeyword);
+    }
+
 
     render() {
         return (
@@ -43,11 +58,11 @@ class HomePage extends React.Component {
                         <div class="emp-detail-text">
                             Employee Details <div class="emp-count">{this.state.employeeArray.length}</div>
                         </div>
-                        <div className="row button-box">
-                        <div className="search-box">
-                            <input className={"input" + (this.state.searchExanpand && 'input-expand')}
-                                onChange={this.search} type="text" placeholder="" />
-                            <img className="search-icon" src={Searchicon} alt="sercah-icon" />    
+                      
+                        <div className="search-box" onClick={this.openSearch}>
+                            <input className={"search-input" + (this.state.searchExanpand && "input-expand")}
+                                onChange={(event) => this.search(event.target.value)}  type="text" placeholder="" />
+                            <img className="search-icon" src={Searchicon} alt="search-icon" />    
                         </div>
                         <Link  to="payroll-form" className="add-button">
                             <div className="plus-icon">
@@ -55,7 +70,7 @@ class HomePage extends React.Component {
                             </div>
                             <div>Add User</div>
                         </Link>
-                        </div>
+                       
                     </div>
                 </div>
                 <div className="table-main">

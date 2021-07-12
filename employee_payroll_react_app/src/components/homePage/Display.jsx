@@ -35,9 +35,6 @@ const Display = (props) => {
 
     const update = (id) => {
         props.history.push(`/payroll-form/${id}`)
-        //employeeService.updateEmployee(id, data).then(response => {
-
-       // })
     }
     
    
